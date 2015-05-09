@@ -14,6 +14,5 @@ FOUNDATION_EXPORT double RecVersionNumber;
 //! Project version string for Rec.
 FOUNDATION_EXPORT const unsigned char RecVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <Rec/PublicHeader.h>
-
-
+#import "Result/Result.h"
+#import "Box/Box.h"

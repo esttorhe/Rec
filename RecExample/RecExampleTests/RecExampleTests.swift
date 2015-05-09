@@ -1,6 +1,6 @@
 //
-//  RecTests.swift
-//  RecTests
+//  RecExampleTests.swift
+//  RecExampleTests
 //
 //  Created by Esteban Torres on 7/5/15.
 //  Copyright (c) 2015 Esteban Torres. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class RecTests: XCTestCase {
+class RecExampleTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
