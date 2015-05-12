@@ -246,14 +246,5 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
 }
 
 public func == (rec1: RecordingProtocol, rec2: RecordingProtocol) -> Bool {
-//    if let conn1 = rec1.connection { // We have a `connection` on 1st object
-//        if let conn2 = rec2.connection { // We have a `connection` on 2nd object
-//            return conn1.hashValue == rec2.hashValue // Compare both `connection`s
-//        }
-//    } else { // We don't have `connection` on first object
-//        rec2.connection == nil // If we don't have `connection` on 2nd we are equal
-//    }
-//    
-//    return false
     return rec1.hashValue == rec2.hashValue
 }
