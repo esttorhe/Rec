@@ -6,25 +6,9 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		113DD0921AFDBB9000109978 /* Rec_FatBinary */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 113DD0931AFDBB9000109978 /* Build configuration list for PBXAggregateTarget "Rec_FatBinary" */;
-			buildPhases = (
-				113DD0961AFDBBA400109978 /* Make Fat Binary */,
-			);
-			dependencies = (
-			);
-			name = Rec_FatBinary;
-			productName = Rec_FatBinary;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		113DD09F1AFE437700109978 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113DD09D1AFE437700109978 /* Box.framework */; };
-		113DD0A01AFE437700109978 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113DD09E1AFE437700109978 /* Result.framework */; };
-		113DD0A11AFE438200109978 /* Box.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 113DD09D1AFE437700109978 /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		113DD0A21AFE438200109978 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 113DD09E1AFE437700109978 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		114C484C1B01A3B200463FCD /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114C484A1B01A3B200463FCD /* Box.framework */; };
+		114C484D1B01A3B200463FCD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114C484B1B01A3B200463FCD /* Result.framework */; };
 		119B828F1AFC18C0000A8BBF /* Rec.h in Headers */ = {isa = PBXBuildFile; fileRef = 119B828E1AFC18C0000A8BBF /* Rec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		119B82951AFC18C0000A8BBF /* Rec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B82891AFC18C0000A8BBF /* Rec.framework */; };
 		119B82A61AFC1915000A8BBF /* RecProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B82A51AFC1915000A8BBF /* RecProtocol.swift */; };
@@ -41,24 +25,9 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		113DD08B1AFDADEA00109978 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				113DD0A11AFE438200109978 /* Box.framework in Embed Frameworks */,
-				113DD0A21AFE438200109978 /* Result.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		113DD09D1AFE437700109978 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = "Carthage/Checkouts/Result/Carthage/Checkouts/Box/build/Debug-iphoneos/Box.framework"; sourceTree = "<group>"; };
-		113DD09E1AFE437700109978 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
+		114C484A1B01A3B200463FCD /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = "Carthage/Checkouts/Result/Carthage/Checkouts/Box/build/Debug-iphoneos/Box.framework"; sourceTree = "<group>"; };
+		114C484B1B01A3B200463FCD /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
 		119B82891AFC18C0000A8BBF /* Rec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		119B828D1AFC18C0000A8BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		119B828E1AFC18C0000A8BBF /* Rec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rec.h; sourceTree = "<group>"; };
@@ -73,8 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				113DD09F1AFE437700109978 /* Box.framework in Frameworks */,
-				113DD0A01AFE437700109978 /* Result.framework in Frameworks */,
+				114C484C1B01A3B200463FCD /* Box.framework in Frameworks */,
+				114C484D1B01A3B200463FCD /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +115,8 @@
 		40757067DF242929D0DAAD41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				113DD09D1AFE437700109978 /* Box.framework */,
-				113DD09E1AFE437700109978 /* Result.framework */,
+				114C484A1B01A3B200463FCD /* Box.framework */,
+				114C484B1B01A3B200463FCD /* Result.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,12 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 119B829F1AFC18C0000A8BBF /* Build configuration list for PBXNativeTarget "Rec" */;
 			buildPhases = (
-				113DD08B1AFDADEA00109978 /* Embed Frameworks */,
-				119B82DD1AFC635D000A8BBF /* Copy Carthage Frameworks */,
-				119B82841AFC18C0000A8BBF /* Sources */,
 				119B82851AFC18C0000A8BBF /* Frameworks */,
+				119B82841AFC18C0000A8BBF /* Sources */,
 				119B82861AFC18C0000A8BBF /* Headers */,
 				119B82871AFC18C0000A8BBF /* Resources */,
+				119B82DD1AFC635D000A8BBF /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,9 +181,6 @@
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Esteban Torres";
 				TargetAttributes = {
-					113DD0921AFDBB9000109978 = {
-						CreatedOnToolsVersion = 6.4;
-					};
 					119B82881AFC18C0000A8BBF = {
 						CreatedOnToolsVersion = 6.4;
 					};
@@ -238,7 +203,6 @@
 			targets = (
 				119B82881AFC18C0000A8BBF /* Rec */,
 				119B82931AFC18C0000A8BBF /* RecTests */,
-				113DD0921AFDBB9000109978 /* Rec_FatBinary */,
 			);
 		};
 /* End PBXProject section */
@@ -261,20 +225,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		113DD0961AFDBBA400109978 /* Make Fat Binary */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Make Fat Binary";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"";
-		};
 		119B82DD1AFC635D000A8BBF /* Copy Carthage Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,22 +269,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		113DD0941AFDBB9000109978 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		113DD0951AFDBB9000109978 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		119B829D1AFC18C0000A8BBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -502,14 +436,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		113DD0931AFDBB9000109978 /* Build configuration list for PBXAggregateTarget "Rec_FatBinary" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				113DD0941AFDBB9000109978 /* Debug */,
-				113DD0951AFDBB9000109978 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		119B82831AFC18C0000A8BBF /* Build configuration list for PBXProject "Rec" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

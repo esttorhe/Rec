@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0640"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "113DD0921AFDBB9000109978"
-               BuildableName = "Rec_FatBinary"
-               BlueprintName = "Rec_FatBinary"
-               ReferencedContainer = "container:Rec.xcodeproj">
+               BlueprintIdentifier = "D470AC3619E86128003DA6C6"
+               BuildableName = "Box.framework"
+               BlueprintName = "Box-Mac"
+               ReferencedContainer = "container:Box.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D470AC4119E86128003DA6C6"
+               BuildableName = "Box-MacTests.xctest"
+               BlueprintName = "Box-MacTests"
+               ReferencedContainer = "container:Box.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,7 +42,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D470AC4119E86128003DA6C6"
+               BuildableName = "Box-MacTests.xctest"
+               BlueprintName = "Box-MacTests"
+               ReferencedContainer = "container:Box.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D470AC3619E86128003DA6C6"
+            BuildableName = "Box.framework"
+            BlueprintName = "Box-Mac"
+            ReferencedContainer = "container:Box.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -42,10 +75,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "113DD0921AFDBB9000109978"
-            BuildableName = "Rec_FatBinary"
-            BlueprintName = "Rec_FatBinary"
-            ReferencedContainer = "container:Rec.xcodeproj">
+            BlueprintIdentifier = "D470AC3619E86128003DA6C6"
+            BuildableName = "Box.framework"
+            BlueprintName = "Box-Mac"
+            ReferencedContainer = "container:Box.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,10 +93,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "113DD0921AFDBB9000109978"
-            BuildableName = "Rec_FatBinary"
-            BlueprintName = "Rec_FatBinary"
-            ReferencedContainer = "container:Rec.xcodeproj">
+            BlueprintIdentifier = "D470AC3619E86128003DA6C6"
+            BuildableName = "Box.framework"
+            BlueprintName = "Box-Mac"
+            ReferencedContainer = "container:Box.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

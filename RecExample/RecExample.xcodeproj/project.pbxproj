@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		114C48491B01A3A400463FCD /* Rec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114C48481B01A3A400463FCD /* Rec.framework */; };
 		119B82B61AFC1972000A8BBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B82B51AFC1972000A8BBF /* AppDelegate.swift */; };
 		119B82B81AFC1972000A8BBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B82B71AFC1972000A8BBF /* ViewController.swift */; };
 		119B82BB1AFC1972000A8BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119B82B91AFC1972000A8BBF /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		114C48481B01A3A400463FCD /* Rec.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rec.framework; path = "../build/Debug-iphoneos/Rec.framework"; sourceTree = "<group>"; };
 		119B82B01AFC1972000A8BBF /* RecExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		119B82B41AFC1972000A8BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		119B82B51AFC1972000A8BBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				114C48491B01A3A400463FCD /* Rec.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +119,7 @@
 		119B82D71AFC198E000A8BBF /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				114C48481B01A3A400463FCD /* Rec.framework */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -352,6 +356,8 @@
 					"$(inherited)",
 					"/Users/creegan/Documents/Code/Personal/Rec/build/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Rec-avyubabzavjowocuuwcwsncstcba/Build/Products/Debug-iphoneos",
+					"/Users/creegan/Documents/Code/Personal/Rec/Carthage/Checkouts/Result/Carthage/Checkouts/Box/build/Debug-iphoneos",
+					"/Users/creegan/Documents/Code/Personal/Rec/Carthage/Checkouts/Result/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = RecExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -369,6 +375,8 @@
 					"$(inherited)",
 					"/Users/creegan/Documents/Code/Personal/Rec/build/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Rec-avyubabzavjowocuuwcwsncstcba/Build/Products/Debug-iphoneos",
+					"/Users/creegan/Documents/Code/Personal/Rec/Carthage/Checkouts/Result/Carthage/Checkouts/Box/build/Debug-iphoneos",
+					"/Users/creegan/Documents/Code/Personal/Rec/Carthage/Checkouts/Result/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = RecExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
