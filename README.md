@@ -7,6 +7,7 @@ Helper library to record URL requests and save them locally (great for fixtures 
   <a href="#why">Why?</a> &bull; 
   <a href="#ohhttpstubs">OHHTTPStubs</a> &bull; 
   <a href="#rec"><b>Rec</b></a> &bull; 
+  <a href="#error-codes"><i>Error Codes</i></a> &bull; 
   <a href="#todo">TODO</a> &bull; 
 </p>
 -------
