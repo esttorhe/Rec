@@ -352,13 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/creegan/Documents/Code/Personal/Rec/build/Debug-iphoneos",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Rec-avyubabzavjowocuuwcwsncstcba/Build/Products/Debug-iphoneos",
-					"/Users/creegan/Documents/Code/Personal/Rec/Carthage/Checkouts/Result/Carthage/Checkouts/Box/build/Debug-iphoneos",
-					"/Users/creegan/Documents/Code/Personal/Rec/Carthage/Checkouts/Result/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RecExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -371,13 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/creegan/Documents/Code/Personal/Rec/build/Debug-iphoneos",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Rec-avyubabzavjowocuuwcwsncstcba/Build/Products/Debug-iphoneos",
-					"/Users/creegan/Documents/Code/Personal/Rec/Carthage/Checkouts/Result/Carthage/Checkouts/Box/build/Debug-iphoneos",
-					"/Users/creegan/Documents/Code/Personal/Rec/Carthage/Checkouts/Result/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RecExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

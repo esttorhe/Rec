@@ -247,6 +247,10 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
                     NSUnderlyingErrorKey: error
                 ])
             callback(Result.failure(internalError))
+            
+            if let client = self.client {
+                client.URLProtocol(self, didFailWithError: error)
+            }
         }
     }
 }
