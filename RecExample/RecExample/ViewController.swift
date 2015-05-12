@@ -2,41 +2,64 @@
 // Native Frameworks
 import UIKit
 
-// Pod
+// Dynamic Frameworks
 import Rec
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: configuration)
-        let url = NSURL(string: "http://getat-stage.railwaymen.org/api/v1/discover/tags?access_token=aef6c0853c5e168a16342964ee415b46ba6d373b6a4f5fdb957fe3bfd7943da1")!
+        let url = NSURL(string: "http://jsonplaceholder.typicode.com/posts")!
         var request = NSMutableURLRequest(URL: url)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        if let protocols = configuration.protocolClasses {
-            if let recProtocol: AnyObject = (protocols.filter {
-                prot in
-                return prot.isKindOfClass(RecordingProtocol)
-            }.first) {
-                (recProtocol as! RecordingProtocol).operationResult = {
-                    result in
-                    switch result {
-                    case .Success(let message):
-                        println("Score: \(message)")
-                    case .Failure(let error):
-                        println("Buuu: \(error)")
-                    }
-                }
+        // This is added to know the location of each request's file
+        RecordingProtocol.globalOperationResult {
+            result in
+            let gMessage: String
+            
+            switch result {
+                case .Success(let message):
+                    gMessage = "• 🎉 Success: \(message)"
+                    println("\(gMessage)")
+                case .Failure(let error):
+                    gMessage = "• 😨 Error: \(error)"
+                    println("\(gMessage)")
             }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.textView.text = gMessage
+            })
         }
-
+        
         let task = session.dataTaskWithRequest(request) {
             (data, response, error) -> Void in
-            println("• Response: \(response)")
-            println("• Error: \(error)")
+            // Here we have an example of how the «hijacked» request returned everything as expected
+            let message: String
+            
+            if error != nil && error.code != 0 {
+                println("• 😨 Error: \(error)")
+                message = error.localizedDescription
+            } else {
+                println("• 🎉 Response: \(response)")
+                message = "\(response)"
+            }
+            
+            let alert = UIAlertView(
+                title: "📢 Response 📢",
+                message: message,
+                delegate: nil,
+                cancelButtonTitle: nil,
+                otherButtonTitles: "OK")
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                alert.show()
+            })
         }
         
         task.resume()
