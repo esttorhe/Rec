@@ -6,8 +6,64 @@ import Foundation
 import Result
 import Box
 
-// `NSURLProtocol` subclass that records `NSURLResponse`'s `JSON`.
-public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLConnectionDataDelegate {
+/** 
+`NSURLProtocol` subclass that records `NSURLResponse`'s `JSON`.
+*/
+public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLConnectionDataDelegate, Hashable {
+    // MARK: RecordingProtocolsManager
+    
+    /**
+        Internal singleton class that will hold all instances and responses of `RecordingProtocol`
+    */
+    private class RecordingProtocolsManager {
+        /**
+            Shared Instance
+        */
+        static let sharedManager = RecordingProtocolsManager()
+        
+        /**
+            Array of `RecordingProtocol` for reporting back the results of each.
+        */
+        private var requests = [Int:RecordingProtocol]()
+        
+        /**
+            «Dummy» variable used for «locking» when adding new requests.
+        */
+        private let lock = "LOCK"
+        
+        /**
+            «Callback» function to report back the result of each request.
+        */
+        var operationResult: ((Result<String, NSError>) -> ())?
+        
+        init() {}
+        
+        /**
+            Adds a new instance of `RecordingProtocol` to the list of saved requests
+            to report back the result of each.
+        */
+        func addProtocol(recordingProtocol: RecordingProtocol) {
+            objc_sync_enter(lock)
+            requests[recordingProtocol.hashValue] = recordingProtocol
+            
+            recordingProtocol.operationResult = {
+                result in
+                if let opResult = self.operationResult {
+                    opResult(result)
+                    objc_sync_enter(self.lock)
+                    self.requests.removeValueForKey(recordingProtocol.hashValue)
+                    objc_sync_exit(self.lock)
+                }
+            }
+            
+            objc_sync_exit(lock)
+        }
+    }
+    
+    
+    
+    // MARK: - RecordingProtocol
+    
     private let data: NSMutableData
     private var connection: NSURLConnection?
     
@@ -35,7 +91,41 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
         super.init(request: mRequest, cachedResponse: cachedResponse, client: client)
     }
     
-    // MARK: - NSURLProtocol
+    /**
+    «Global callback» for all requests operations.
+
+    Should be called like this:
+    
+        RecordingProtocol.globalOperationResult {
+            result in
+                switch result {
+                case .Success(let message):
+                    println("🎉 Successfully saved fixtures: \(message)")
+                case .Failure(let error):
+                    println("Something went wrong: \(error)")
+                }
+        }
+    */
+    public class func globalOperationResult(operation: (Result<String, NSError>) -> ()) {
+        RecordingProtocolsManager.sharedManager.operationResult = operation
+    }
+    
+    public override var hashValue: Int {
+        get {
+            if let conn = connection {
+                if let url = conn.originalRequest.URL {
+                    return url.hashValue
+                }
+            }
+            
+            return 0
+        }
+    }
+    
+   
+    
+    // MARK: NSURLProtocol
+    
     public override class func canInitWithRequest(request: NSURLRequest) -> Bool {
         if let stop = request.valueForHTTPHeaderField(RecordingProtocol.ignoreRequestHTTPHeaderKey) {
             return false // We are already «eavesdropping» this request
@@ -61,6 +151,7 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
     override public func startLoading() {
         if let connection = NSURLConnection(request: request, delegate: self) {
             self.connection = connection
+            RecordingProtocolsManager.sharedManager.addProtocol(self)
             connection.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             connection.start()
         } else {
@@ -71,7 +162,9 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
         }
     }
     
-    // MARK: - NSURLConnectionDelegate
+    
+    
+    // MARK: NSURLConnectionDelegate
     
     public func connection(connection: NSURLConnection, didFailWithError error: NSError) {
         if let callback = operationResult {
@@ -86,7 +179,9 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
         }
     }
     
-    // MARK: - NSURLConnectionDataDelegate
+    
+    
+    // MARK: NSURLConnectionDataDelegate
     
     public func connection(connection: NSURLConnection, didReceiveData data: NSData) {
         self.data.appendData(data)
@@ -148,4 +243,17 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
             }
         }
     }
+}
+
+public func == (rec1: RecordingProtocol, rec2: RecordingProtocol) -> Bool {
+//    if let conn1 = rec1.connection { // We have a `connection` on 1st object
+//        if let conn2 = rec2.connection { // We have a `connection` on 2nd object
+//            return conn1.hashValue == rec2.hashValue // Compare both `connection`s
+//        }
+//    } else { // We don't have `connection` on first object
+//        rec2.connection == nil // If we don't have `connection` on 2nd we are equal
+//    }
+//    
+//    return false
+    return rec1.hashValue == rec2.hashValue
 }
