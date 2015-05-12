@@ -6,6 +6,17 @@ import Foundation
 import Result
 import Box
 
+/**
+    List of error codes:
+        - -666: Unable to start loading the request
+        - -667: Failed to connect to URL
+        - -668: Unable to correctly parse as a `JSON` response
+        - -669: Unable to get the `Document`'s directory path
+        - -670: Unable to extract the request's last path component for file name generation.
+        - -671: Unable to save file to path
+        - -672: Unable to get a successful response from URL.
+*/
+
 /** 
 `NSURLProtocol` subclass that records `NSURLResponse`'s `JSON`.
 */
@@ -151,11 +162,12 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
                 request,
                 queue: NSOperationQueue.mainQueue()) {
                 response, data, error -> Void in
+                    // Try to access the protocol's client
                     if let client = self.client {
+                        // Cascade the «messages» to avoid the calling up from being stuck without response
                         client.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .NotAllowed)
                         client.URLProtocolDidFinishLoading(self)
                     }
-                    
                     
                     if error == nil || error.code == 0 {
                         if let json = NSString(data: data, encoding: NSUTF8StringEncoding) { // We try to decode the `JSON` response
@@ -184,7 +196,7 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
                                             let internalError = NSError(
                                                 domain: RecordingProtocol.errorDomain,
                                                 code: -670,
-                                                userInfo: [NSLocalizedDescriptionKey: "Unable to extract the request's last path component for the file generation."])
+                                                userInfo: [NSLocalizedDescriptionKey: "Unable to extract the request's last path component for file name generation."])
                                             callback(Result.failure(internalError))
                                         }
                                     }
