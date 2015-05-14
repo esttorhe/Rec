@@ -42,6 +42,7 @@ Here's the list of «internal» error codes:
 - [ ] Support other responses (e.g.: `xml`, etc)
 - [ ] Support custom «save» paths
 - [ ] Support disabling automatic «injection»
+- [ ] Fix the race condition happening on the Example App (`println()` I'm :eyes: at you :unamused: )
 
 [Orta]:https://github.com/orta
 [httpstubs]:https://github.com/AliSoftware/OHHTTPStubs
