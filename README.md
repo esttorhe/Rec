@@ -45,6 +45,7 @@ Here's the list of «internal» error codes:
 - [ ] Support custom «save» paths
 - [ ] Support disabling automatic «injection»
 - [ ] Fix the race condition happening on the Example App (`println()` I'm :eyes: at you :unamused: )
+- [ ] Add support for `OS X`
 
 [Orta]:https://github.com/orta
 [httpstubs]:https://github.com/AliSoftware/OHHTTPStubs
