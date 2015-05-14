@@ -15,13 +15,23 @@ extension NSURLSessionConfiguration {
         }
         
         dispatch_once(&Static.token) {
-            let originalSelector = Selector("defaultSessionConfiguration")
-            let swizzledSelector = Selector("rec_defaultSessionConfiguration")
+            // Swizzle `defaultSessionConfiguration`
+            let originalDefaultSelector = Selector("defaultSessionConfiguration")
+            let swizzledDefaultSelector = Selector("rec_defaultSessionConfiguration")
             
-            let originalMethod = class_getClassMethod(self, originalSelector)
-            let swizzledMethod = class_getClassMethod(self, swizzledSelector)
+            let originalDefaultMethod = class_getClassMethod(self, originalDefaultSelector)
+            let swizzledDefaultMethod = class_getClassMethod(self, swizzledDefaultSelector)
             
-            method_exchangeImplementations(originalMethod, swizzledMethod);
+            method_exchangeImplementations(originalDefaultMethod, swizzledDefaultMethod);
+            
+            // Swizzle `ephemeralSessionConfiguration`
+            let originalEphemeralSelector = Selector("ephemeralSessionConfiguration")
+            let swizzledEphemeralSelector = Selector("rec_ephemeralSessionConfiguration")
+            
+            let originalEphemeralMethod = class_getClassMethod(self, originalEphemeralSelector)
+            let swizzledEphemeralMethod = class_getClassMethod(self, swizzledEphemeralSelector)
+            
+            method_exchangeImplementations(originalEphemeralMethod, swizzledEphemeralMethod);
         }
     }
     
@@ -37,8 +47,23 @@ extension NSURLSessionConfiguration {
     */
     class func rec_defaultSessionConfiguration() -> NSURLSessionConfiguration {
         RecordingProtocol.registerClass(RecordingProtocol)
-        
         let configuration = self.rec_defaultSessionConfiguration()
+        configuration.protocolClasses?.insert(RecordingProtocol.self as AnyObject, atIndex: 0)
+        
+        return configuration
+    }
+    
+    /**
+    Swizzles `ephemeralSessionConfiguration` method.
+    Internally grabs the same implementation and just appends `RecordingProtocol`.
+    
+    Also registers `RecordingProtocol` class.
+    
+    :returns: Fully configure `NSURLSessionConfiguration` with `RecordingProtocol` added to the `protocolClasses`.
+    */
+    class func rec_ephemeralSessionConfiguration() -> NSURLSessionConfiguration {
+        RecordingProtocol.registerClass(RecordingProtocol)
+        let configuration = self.rec_ephemeralSessionConfiguration()
         configuration.protocolClasses?.insert(RecordingProtocol.self as AnyObject, atIndex: 0)
         
         return configuration
