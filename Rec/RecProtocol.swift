@@ -56,8 +56,7 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
             objc_sync_enter(lock)
             requests[recordingProtocol.hashValue] = recordingProtocol
             
-            recordingProtocol.operationResult = {
-                result in
+            recordingProtocol.operationResult = { result in
                 if let opResult = self.operationResult {
                     opResult(result)
                     objc_sync_enter(self.lock)
@@ -65,7 +64,6 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
                     objc_sync_exit(self.lock)
                 }
             }
-            
             objc_sync_exit(lock)
         }
     }
@@ -118,9 +116,7 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
     
     public override var hashValue: Int {
         get {
-            if let url = request.URL {
-                return url.hashValue
-            }
+            if let url = request.URL { return url.hashValue }
             
             return 0
         }
@@ -163,42 +159,18 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
                     }
                 
                 // «Cascade up» the success or add our own failure.
-                return finalResult.analysis(ifSuccess: { Result.success($0) }, ifFailure: {
-                    return Result.failure(NSError(
+                return finalResult ?? Result.failure(NSError(
                         domain: RecordingProtocol.errorDomain,
                         code: -671,
                         userInfo: [
                             NSLocalizedDescriptionKey: "Unable to save file \(fileUrl.lastPathComponent) to here \(fileUrl.absoluteString)",
-                            NSUnderlyingErrorKey: $0
+                            NSUnderlyingErrorKey: finalResult.error!
                         ]))
-                })
             }
         }
 
         if let callback = operationResult {
             callback(result)
-        }
-    }
-    
-    /**
-        «Reports» an error back to the caller via `Result` types if an `operationResult` callback is provided.
-    */
-    private func reportError(#code: Int, description: String, underlyingError: NSError?) {
-        if let callback = operationResult {
-            // Generate the `userInfo` dictionary depending on wether or not an `underlyingError` was provided.
-            let userInfo: [NSObject: AnyObject]
-            switch (underlyingError) {
-            case .None:
-                userInfo = [NSLocalizedDescriptionKey: description]
-            case .Some(let error):
-                userInfo = [
-                    NSLocalizedDescriptionKey: description,
-                    NSUnderlyingErrorKey: error
-                ]
-            }
-            
-            let internalError = NSError(domain: RecordingProtocol.errorDomain, code: code, userInfo:userInfo)
-            callback(Result.failure(internalError))
         }
     }
     
@@ -261,19 +233,16 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
     override public func startLoading() {
         if let connection = NSURLConnection(request: request, delegate: self) {
             RecordingProtocolsManager.sharedManager.addProtocol(self)
-            NSURLConnection.sendAsynchronousRequest(
-                request,
-                queue: NSOperationQueue.mainQueue()) {
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
                 response, data, error -> Void in
-                    
-                    // Try to access the protocol's client
-                    if let client = self.client {
-                        // Cascade the «messages» to avoid the calling up from being stuck without response
-                        client.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .NotAllowed)
-                        client.URLProtocolDidFinishLoading(self)
-                    }
-                    
-                    self.processResponse(response, connection: connection, data: data, error: error)
+                // Try to access the protocol's client
+                if let client = self.client {
+                    // Cascade the «messages» to avoid the calling up from being stuck without response
+                    client.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .NotAllowed)
+                    client.URLProtocolDidFinishLoading(self)
+                }
+                
+                self.processResponse(response, connection: connection, data: data, error: error)
             }
         } else {
             if let callback = operationResult {
