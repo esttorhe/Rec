@@ -13,6 +13,12 @@
 		119B82951AFC18C0000A8BBF /* Rec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B82891AFC18C0000A8BBF /* Rec.framework */; };
 		119B82A61AFC1915000A8BBF /* RecProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B82A51AFC1915000A8BBF /* RecProtocol.swift */; };
 		119B82E31AFC6C2B000A8BBF /* Rec_NSURLSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B82E21AFC6C2B000A8BBF /* Rec_NSURLSessionConfiguration.swift */; };
+		11A8162E1B05609C0072B8D7 /* Rec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A816231B05609B0072B8D7 /* Rec.framework */; };
+		11A8163C1B0560A90072B8D7 /* RecProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B82A51AFC1915000A8BBF /* RecProtocol.swift */; };
+		11A8163D1B0560A90072B8D7 /* Rec_NSURLSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B82E21AFC6C2B000A8BBF /* Rec_NSURLSessionConfiguration.swift */; };
+		11A816411B0561070072B8D7 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A8163F1B0561070072B8D7 /* Box.framework */; };
+		11A816421B0561070072B8D7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A816401B0561070072B8D7 /* Result.framework */; };
+		11A816431B0561B70072B8D7 /* Rec.h in Headers */ = {isa = PBXBuildFile; fileRef = 119B828E1AFC18C0000A8BBF /* Rec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +28,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 119B82881AFC18C0000A8BBF;
 			remoteInfo = Rec;
+		};
+		11A8162F1B05609C0072B8D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 119B82801AFC18C0000A8BBF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11A816221B05609B0072B8D7;
+			remoteInfo = "Rec-OSX";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -35,6 +48,10 @@
 		119B829A1AFC18C0000A8BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		119B82A51AFC1915000A8BBF /* RecProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecProtocol.swift; sourceTree = "<group>"; };
 		119B82E21AFC6C2B000A8BBF /* Rec_NSURLSessionConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rec_NSURLSessionConfiguration.swift; sourceTree = "<group>"; };
+		11A816231B05609B0072B8D7 /* Rec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A8162D1B05609B0072B8D7 /* Rec-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rec-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A8163F1B0561070072B8D7 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Checkouts/Result/Carthage/Checkouts/Box/build/Debug/Box.framework; sourceTree = "<group>"; };
+		11A816401B0561070072B8D7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Checkouts/Result/build/Debug/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +69,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				119B82951AFC18C0000A8BBF /* Rec.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A8161F1B05609B0072B8D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A816411B0561070072B8D7 /* Box.framework in Frameworks */,
+				11A816421B0561070072B8D7 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A8162A1B05609B0072B8D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A8162E1B05609C0072B8D7 /* Rec.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +107,8 @@
 			children = (
 				119B82891AFC18C0000A8BBF /* Rec.framework */,
 				119B82941AFC18C0000A8BBF /* RecTests.xctest */,
+				11A816231B05609B0072B8D7 /* Rec.framework */,
+				11A8162D1B05609B0072B8D7 /* Rec-OSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +151,8 @@
 		40757067DF242929D0DAAD41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11A8163F1B0561070072B8D7 /* Box.framework */,
+				11A816401B0561070072B8D7 /* Result.framework */,
 				114C484A1B01A3B200463FCD /* Box.framework */,
 				114C484B1B01A3B200463FCD /* Result.framework */,
 			);
@@ -132,6 +170,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11A816201B05609B0072B8D7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A816431B0561B70072B8D7 /* Rec.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -143,7 +189,7 @@
 				119B82841AFC18C0000A8BBF /* Sources */,
 				119B82861AFC18C0000A8BBF /* Headers */,
 				119B82871AFC18C0000A8BBF /* Resources */,
-				119B82DD1AFC635D000A8BBF /* Copy Carthage Frameworks */,
+				119B82DD1AFC635D000A8BBF /* Copy Carthage Dependency Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +218,43 @@
 			productReference = 119B82941AFC18C0000A8BBF /* RecTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		11A816221B05609B0072B8D7 /* Rec-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A8163A1B05609C0072B8D7 /* Build configuration list for PBXNativeTarget "Rec-OSX" */;
+			buildPhases = (
+				11A8161F1B05609B0072B8D7 /* Frameworks */,
+				11A8161E1B05609B0072B8D7 /* Sources */,
+				11A816201B05609B0072B8D7 /* Headers */,
+				11A816211B05609B0072B8D7 /* Resources */,
+				11A8163E1B0560E10072B8D7 /* Copy Carthage Dependency Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rec-OSX";
+			productName = "Rec-OSX";
+			productReference = 11A816231B05609B0072B8D7 /* Rec.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		11A8162C1B05609B0072B8D7 /* Rec-OSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A8163B1B05609C0072B8D7 /* Build configuration list for PBXNativeTarget "Rec-OSXTests" */;
+			buildPhases = (
+				11A816291B05609B0072B8D7 /* Sources */,
+				11A8162A1B05609B0072B8D7 /* Frameworks */,
+				11A8162B1B05609B0072B8D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11A816301B05609C0072B8D7 /* PBXTargetDependency */,
+			);
+			name = "Rec-OSXTests";
+			productName = "Rec-OSXTests";
+			productReference = 11A8162D1B05609B0072B8D7 /* Rec-OSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -185,6 +268,12 @@
 						CreatedOnToolsVersion = 6.4;
 					};
 					119B82931AFC18C0000A8BBF = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					11A816221B05609B0072B8D7 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					11A8162C1B05609B0072B8D7 = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
@@ -203,6 +292,8 @@
 			targets = (
 				119B82881AFC18C0000A8BBF /* Rec */,
 				119B82931AFC18C0000A8BBF /* RecTests */,
+				11A816221B05609B0072B8D7 /* Rec-OSX */,
+				11A8162C1B05609B0072B8D7 /* Rec-OSXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -222,22 +313,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11A816211B05609B0072B8D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A8162B1B05609B0072B8D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		119B82DD1AFC635D000A8BBF /* Copy Carthage Frameworks */ = {
+		119B82DD1AFC635D000A8BBF /* Copy Carthage Dependency Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Carthage Frameworks";
+			name = "Copy Carthage Dependency Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks ${SRCROOT}/Carthage/Build/iOS/Box.framework\n/usr/local/bin/carthage copy-frameworks ${SRCROOT}/Carthage/Build/iOS/Result.framework";
+		};
+		11A8163E1B0560E10072B8D7 /* Copy Carthage Dependency Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Carthage Dependency Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks ${SRCROOT}/Carthage/Build/Mac/Box.framework\n/usr/local/bin/carthage copy-frameworks ${SRCROOT}/Carthage/Build/Mac/Result.framework";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -258,6 +377,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11A8161E1B05609B0072B8D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A8163C1B0560A90072B8D7 /* RecProtocol.swift in Sources */,
+				11A8163D1B0560A90072B8D7 /* Rec_NSURLSessionConfiguration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A816291B05609B0072B8D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +400,11 @@
 			isa = PBXTargetDependency;
 			target = 119B82881AFC18C0000A8BBF /* Rec */;
 			targetProxy = 119B82961AFC18C0000A8BBF /* PBXContainerItemProxy */;
+		};
+		11A816301B05609C0072B8D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11A816221B05609B0072B8D7 /* Rec-OSX */;
+			targetProxy = 11A8162F1B05609C0072B8D7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -431,6 +571,95 @@
 			};
 			name = Release;
 		};
+		11A816361B05609C0072B8D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac/**",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Rec/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = Rec;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		11A816371B05609C0072B8D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac/**",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Rec/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = Rec;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		11A816381B05609C0072B8D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RecTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		11A816391B05609C0072B8D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RecTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -457,6 +686,24 @@
 			buildConfigurations = (
 				119B82A31AFC18C0000A8BBF /* Debug */,
 				119B82A41AFC18C0000A8BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A8163A1B05609C0072B8D7 /* Build configuration list for PBXNativeTarget "Rec-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A816361B05609C0072B8D7 /* Debug */,
+				11A816371B05609C0072B8D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A8163B1B05609C0072B8D7 /* Build configuration list for PBXNativeTarget "Rec-OSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A816381B05609C0072B8D7 /* Debug */,
+				11A816391B05609C0072B8D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

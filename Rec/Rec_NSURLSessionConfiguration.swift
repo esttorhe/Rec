@@ -1,3 +1,4 @@
+//  Copyright (c) 2015 Esteban Torres. All rights reserved.
 
 /**
     Class extension that allows `Rec` to automatically intercepts all calls without
@@ -69,3 +70,7 @@ extension NSURLSessionConfiguration {
         return configuration
     }
 }
+
+// MARK: - Imports!
+
+import Foundation
