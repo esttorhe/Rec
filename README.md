@@ -41,11 +41,11 @@ Here's the list of «internal» error codes:
   - `-672`: Unable to get a successful response from URL.
 
 # TODO:
-- [ ] Support other responses (e.g.: `xml`, etc)
-- [ ] Support custom «save» paths
-- [ ] Support disabling automatic «injection»
-- [ ] Fix the race condition happening on the Example App (`println()` I'm :eyes: at you :unamused: )
-- [ ] Add support for `OS X`
+- [ ] Support other responses (e.g.: `xml`, etc) • [Issue #1] (https://github.com/esttorhe/Rec/issues/1)
+- [ ] Support custom «save» paths • [Issue #2] (https://github.com/esttorhe/Rec/issues/2)
+- [ ] Support disabling automatic «injection» • [Issue #3] (https://github.com/esttorhe/Rec/issues/3)
+- [ ] Fix the race condition happening on the Example App (`println()` I'm :eyes: at you :unamused: ) • [Issue #4] (https://github.com/esttorhe/Rec/issues/4)
+- [ ] Add support for `OS X` • [Issue #5] (https://github.com/esttorhe/Rec/issues/5)
 
 [Orta]:https://github.com/orta
 [httpstubs]:https://github.com/AliSoftware/OHHTTPStubs
