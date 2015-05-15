@@ -1,3 +1,4 @@
+//  Copyright (c) 2015 Esteban Torres. All rights reserved.
 
 // Native Frameworks
 import Foundation

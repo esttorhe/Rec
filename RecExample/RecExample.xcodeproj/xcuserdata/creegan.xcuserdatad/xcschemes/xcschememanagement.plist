@@ -4,10 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>RecExample-OSX.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>RecExample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>119B82C41AFC1972000A8BBF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>11A816471B0594140072B8D7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>11A816581B0594140072B8D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

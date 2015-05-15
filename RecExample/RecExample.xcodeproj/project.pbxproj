@@ -14,6 +14,12 @@
 		119B82BD1AFC1972000A8BBF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119B82BC1AFC1972000A8BBF /* Images.xcassets */; };
 		119B82C01AFC1972000A8BBF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119B82BE1AFC1972000A8BBF /* LaunchScreen.xib */; };
 		119B82CC1AFC1973000A8BBF /* RecExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B82CB1AFC1973000A8BBF /* RecExampleTests.swift */; };
+		11A8164D1B0594140072B8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8164C1B0594140072B8D7 /* AppDelegate.swift */; };
+		11A8164F1B0594140072B8D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8164E1B0594140072B8D7 /* ViewController.swift */; };
+		11A816511B0594140072B8D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A816501B0594140072B8D7 /* Images.xcassets */; };
+		11A816541B0594140072B8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A816521B0594140072B8D7 /* Main.storyboard */; };
+		11A816601B0594140072B8D7 /* RecExample_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8165F1B0594140072B8D7 /* RecExample_OSXTests.swift */; };
+		11A8166A1B0597D40072B8D7 /* Rec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A816691B0597D40072B8D7 /* Rec.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +29,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 119B82AF1AFC1972000A8BBF;
 			remoteInfo = RecExample;
+		};
+		11A8165A1B0594140072B8D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 119B82A81AFC1972000A8BBF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11A816471B0594140072B8D7;
+			remoteInfo = "RecExample-OSX";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -38,6 +51,16 @@
 		119B82C51AFC1972000A8BBF /* RecExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		119B82CA1AFC1972000A8BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		119B82CB1AFC1973000A8BBF /* RecExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecExampleTests.swift; sourceTree = "<group>"; };
+		11A816481B0594140072B8D7 /* RecExample-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecExample-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A8164B1B0594140072B8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A8164C1B0594140072B8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11A8164E1B0594140072B8D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11A816501B0594140072B8D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		11A816531B0594140072B8D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11A816591B0594140072B8D7 /* RecExample-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RecExample-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A8165E1B0594140072B8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A8165F1B0594140072B8D7 /* RecExample_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecExample_OSXTests.swift; sourceTree = "<group>"; };
+		11A816691B0597D40072B8D7 /* Rec.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rec.framework; path = ../build/Debug/Rec.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +79,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11A816451B0594140072B8D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A8166A1B0597D40072B8D7 /* Rec.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A816561B0594140072B8D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		119B82A71AFC1972000A8BBF = {
 			isa = PBXGroup;
 			children = (
-				119B82B21AFC1972000A8BBF /* RecExample */,
 				119B82D71AFC198E000A8BBF /* Libraries */,
-				119B82C81AFC1972000A8BBF /* RecExampleTests */,
+				11A816671B0594360072B8D7 /* iOS */,
+				11A816681B0594400072B8D7 /* OSX */,
 				119B82B11AFC1972000A8BBF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +112,8 @@
 			children = (
 				119B82B01AFC1972000A8BBF /* RecExample.app */,
 				119B82C51AFC1972000A8BBF /* RecExampleTests.xctest */,
+				11A816481B0594140072B8D7 /* RecExample-OSX.app */,
+				11A816591B0594140072B8D7 /* RecExample-OSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,11 +122,10 @@
 			isa = PBXGroup;
 			children = (
 				119B82B51AFC1972000A8BBF /* AppDelegate.swift */,
-				119B82B71AFC1972000A8BBF /* ViewController.swift */,
-				119B82B91AFC1972000A8BBF /* Main.storyboard */,
 				119B82BC1AFC1972000A8BBF /* Images.xcassets */,
-				119B82BE1AFC1972000A8BBF /* LaunchScreen.xib */,
 				119B82B31AFC1972000A8BBF /* Supporting Files */,
+				11A8166B1B0599A30072B8D7 /* UI */,
+				11A8166C1B0599A80072B8D7 /* ViewControllers */,
 			);
 			path = RecExample;
 			sourceTree = "<group>";
@@ -96,7 +135,7 @@
 			children = (
 				119B82B41AFC1972000A8BBF /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		119B82C81AFC1972000A8BBF /* RecExampleTests */ = {
@@ -113,15 +152,104 @@
 			children = (
 				119B82CA1AFC1972000A8BBF /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		119B82D71AFC198E000A8BBF /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				11A816691B0597D40072B8D7 /* Rec.framework */,
 				114C48481B01A3A400463FCD /* Rec.framework */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		11A816491B0594140072B8D7 /* RecExample-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				11A8164C1B0594140072B8D7 /* AppDelegate.swift */,
+				11A816501B0594140072B8D7 /* Images.xcassets */,
+				11A8164A1B0594140072B8D7 /* Supporting Files */,
+				11A8166E1B0599BC0072B8D7 /* UI */,
+				11A8166D1B0599B50072B8D7 /* UI */,
+			);
+			path = "RecExample-OSX";
+			sourceTree = "<group>";
+		};
+		11A8164A1B0594140072B8D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11A8164B1B0594140072B8D7 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11A8165C1B0594140072B8D7 /* RecExample-OSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				11A8165F1B0594140072B8D7 /* RecExample_OSXTests.swift */,
+				11A8165D1B0594140072B8D7 /* Supporting Files */,
+			);
+			path = "RecExample-OSXTests";
+			sourceTree = "<group>";
+		};
+		11A8165D1B0594140072B8D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11A8165E1B0594140072B8D7 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11A816671B0594360072B8D7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				119B82B21AFC1972000A8BBF /* RecExample */,
+				119B82C81AFC1972000A8BBF /* RecExampleTests */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		11A816681B0594400072B8D7 /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				11A816491B0594140072B8D7 /* RecExample-OSX */,
+				11A8165C1B0594140072B8D7 /* RecExample-OSXTests */,
+			);
+			path = OSX;
+			sourceTree = "<group>";
+		};
+		11A8166B1B0599A30072B8D7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				119B82B91AFC1972000A8BBF /* Main.storyboard */,
+				119B82BE1AFC1972000A8BBF /* LaunchScreen.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		11A8166C1B0599A80072B8D7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				119B82B71AFC1972000A8BBF /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		11A8166D1B0599B50072B8D7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				11A816521B0594140072B8D7 /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		11A8166E1B0599BC0072B8D7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				11A8164E1B0594140072B8D7 /* ViewController.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +290,41 @@
 			productReference = 119B82C51AFC1972000A8BBF /* RecExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		11A816471B0594140072B8D7 /* RecExample-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A816651B0594140072B8D7 /* Build configuration list for PBXNativeTarget "RecExample-OSX" */;
+			buildPhases = (
+				11A816441B0594140072B8D7 /* Sources */,
+				11A816451B0594140072B8D7 /* Frameworks */,
+				11A816461B0594140072B8D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RecExample-OSX";
+			productName = "RecExample-OSX";
+			productReference = 11A816481B0594140072B8D7 /* RecExample-OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11A816581B0594140072B8D7 /* RecExample-OSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A816661B0594140072B8D7 /* Build configuration list for PBXNativeTarget "RecExample-OSXTests" */;
+			buildPhases = (
+				11A816551B0594140072B8D7 /* Sources */,
+				11A816561B0594140072B8D7 /* Frameworks */,
+				11A816571B0594140072B8D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11A8165B1B0594140072B8D7 /* PBXTargetDependency */,
+			);
+			name = "RecExample-OSXTests";
+			productName = "RecExample-OSXTests";
+			productReference = 11A816591B0594140072B8D7 /* RecExample-OSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,6 +340,13 @@
 					119B82C41AFC1972000A8BBF = {
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = 119B82AF1AFC1972000A8BBF;
+					};
+					11A816471B0594140072B8D7 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					11A816581B0594140072B8D7 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 11A816471B0594140072B8D7;
 					};
 				};
 			};
@@ -195,6 +365,8 @@
 			targets = (
 				119B82AF1AFC1972000A8BBF /* RecExample */,
 				119B82C41AFC1972000A8BBF /* RecExampleTests */,
+				11A816471B0594140072B8D7 /* RecExample-OSX */,
+				11A816581B0594140072B8D7 /* RecExample-OSXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -211,6 +383,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		119B82C31AFC1972000A8BBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A816461B0594140072B8D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A816511B0594140072B8D7 /* Images.xcassets in Resources */,
+				11A816541B0594140072B8D7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A816571B0594140072B8D7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -237,6 +425,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11A816441B0594140072B8D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A8164F1B0594140072B8D7 /* ViewController.swift in Sources */,
+				11A8164D1B0594140072B8D7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A816551B0594140072B8D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A816601B0594140072B8D7 /* RecExample_OSXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -244,6 +449,11 @@
 			isa = PBXTargetDependency;
 			target = 119B82AF1AFC1972000A8BBF /* RecExample */;
 			targetProxy = 119B82C61AFC1972000A8BBF /* PBXContainerItemProxy */;
+		};
+		11A8165B1B0594140072B8D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11A816471B0594140072B8D7 /* RecExample-OSX */;
+			targetProxy = 11A8165A1B0594140072B8D7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -254,6 +464,7 @@
 				119B82BA1AFC1972000A8BBF /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		119B82BE1AFC1972000A8BBF /* LaunchScreen.xib */ = {
@@ -262,6 +473,16 @@
 				119B82BF1AFC1972000A8BBF /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
+			sourceTree = "<group>";
+		};
+		11A816521B0594140072B8D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11A816531B0594140072B8D7 /* Base */,
+			);
+			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -353,7 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = RecExample/Info.plist;
+				INFOPLIST_FILE = "iOS/RecExample/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,7 +587,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = RecExample/Info.plist;
+				INFOPLIST_FILE = "iOS/RecExample/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -386,7 +607,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = RecExampleTests/Info.plist;
+				INFOPLIST_FILE = "iOS/RecExampleTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecExample.app/RecExample";
@@ -401,10 +622,86 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = RecExampleTests/Info.plist;
+				INFOPLIST_FILE = "iOS/RecExampleTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecExample.app/RecExample";
+			};
+			name = Release;
+		};
+		11A816611B0594140072B8D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OSX/RecExample-OSX/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		11A816621B0594140072B8D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "OSX/RecExample-OSX/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		11A816631B0594140072B8D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OSX/RecExample-OSXTests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecExample-OSX.app/Contents/MacOS/RecExample-OSX";
+			};
+			name = Debug;
+		};
+		11A816641B0594140072B8D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OSX/RecExample-OSXTests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecExample-OSX.app/Contents/MacOS/RecExample-OSX";
 			};
 			name = Release;
 		};
@@ -434,6 +731,24 @@
 			buildConfigurations = (
 				119B82D31AFC1973000A8BBF /* Debug */,
 				119B82D41AFC1973000A8BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A816651B0594140072B8D7 /* Build configuration list for PBXNativeTarget "RecExample-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A816611B0594140072B8D7 /* Debug */,
+				11A816621B0594140072B8D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A816661B0594140072B8D7 /* Build configuration list for PBXNativeTarget "RecExample-OSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A816631B0594140072B8D7 /* Debug */,
+				11A816641B0594140072B8D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

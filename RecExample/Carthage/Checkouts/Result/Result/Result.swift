@@ -1,7 +1,5 @@
 //  Copyright (c) 2015 Rob Rix. All rights reserved.
 
-import Box
-
 /// An enum representing either a failure with an explanatory error, or a success with a result value.
 public enum Result<T, Error>: Printable, DebugPrintable {
 	case Success(Box<T>)
@@ -73,18 +71,18 @@ public enum Result<T, Error>: Printable, DebugPrintable {
 			ifSuccess: transform,
 			ifFailure: Result<U, Error>.failure)
 	}
-    
-    /// Returns `self.value` if this result is a .Success, or the given value otherwise. Equivalent with `??`
-    public func recover(value: T) -> T {
-        return self.value ?? value
-    }
-    
-    /// Returns this result if it is a .Success, or the given result otherwise. Equivalent with `??`
-    public func recoverWith(result: Result<T,Error>) -> Result<T,Error> {
-        return analysis(
-            ifSuccess: { _ in self },
-            ifFailure: { _ in result })
-    }
+	
+	/// Returns `self.value` if this result is a .Success, or the given value otherwise. Equivalent with `??`
+	public func recover(@autoclosure value: () -> T) -> T {
+		return self.value ?? value()
+	}
+	
+	/// Returns this result if it is a .Success, or the given result otherwise. Equivalent with `??`
+	public func recoverWith(@autoclosure result: () -> Result<T,Error>) -> Result<T,Error> {
+		return analysis(
+			ifSuccess: { _ in self },
+			ifFailure: { _ in result() })
+	}
 
 
 	// MARK: Errors
@@ -199,6 +197,5 @@ public func >>- <T, U, Error> (result: Result<T, Error>, @noescape transform: T 
 }
 
 
-// MARK: - Imports
-
+import Box
 import Foundation
