@@ -1,4 +1,4 @@
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/esttorhe/Rec.svg)](https://travis-ci.org/esttorhe/Rec)  [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 # ![https://cldup.com/Q0g0iZrPlT.png](https://cldup.com/Q0g0iZrPlT.png)
 Helper library to record URL requests and save them locally (great for fixtures in HTTP stubbing)
