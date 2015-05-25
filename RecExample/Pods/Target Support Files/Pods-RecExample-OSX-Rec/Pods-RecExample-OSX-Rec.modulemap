@@ -1,0 +1,6 @@
+framework module Rec {
+  umbrella header "Pods-RecExample-OSX-Rec-umbrella.h"
+
+  export *
+  module * { export * }
+}
