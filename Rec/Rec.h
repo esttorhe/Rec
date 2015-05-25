@@ -5,6 +5,3 @@ extern double RecVersionNumber;
 
 //! Project version string for Rec.
 extern const unsigned char RecVersionString[];
-
-#import "Result/Result.h"
-#import "Box/Box.h"
