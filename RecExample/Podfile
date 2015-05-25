@@ -1,0 +1,17 @@
+
+use_frameworks!
+
+def pods
+  pod 'Rec', :path => '../'
+end
+
+target 'RecExample', :exclusive => true do
+  platform :ios, '8.0'
+  pods
+end
+
+target 'RecExample-OSX', :exclusive => true do
+  platform :osx, '10.9'
+  pods
+end
+

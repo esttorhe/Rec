@@ -1,0 +1,20 @@
+PODS:
+  - Box (1.2.0)
+  - Rec (1.0.1):
+    - Result (~> 0.4)
+  - Result (0.4.3):
+    - Box (~> 1.2)
+
+DEPENDENCIES:
+  - Rec (from `../`)
+
+EXTERNAL SOURCES:
+  Rec:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Box: 3345df1dee5c8cd639a663e368427c51f931d095
+  Rec: b31bcdf18ad94cd9bf840aff6a1b9177aae69a88
+  Result: 910839ce03c5c573ec94026678b7cecb69ee862e
+
+COCOAPODS: 0.37.1

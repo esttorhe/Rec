@@ -1,4 +1,8 @@
-[![Build Status](https://travis-ci.org/esttorhe/Rec.svg)](https://travis-ci.org/esttorhe/Rec)  [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CI Status](http://img.shields.io/travis/esttorhe/test.svg?style=flat)](https://travis-ci.org/esttorhe/Rec)
+[![Version](https://img.shields.io/cocoapods/v/test.svg?style=flat)](http://cocoapods.org/pods/Rec)
+[![License](https://img.shields.io/cocoapods/l/test.svg?style=flat)](http://cocoapods.org/pods/Rec)
+[![Platform](https://img.shields.io/cocoapods/p/test.svg?style=flat)](http://cocoapods.org/pods/Rec)
 
 # ![https://cldup.com/Q0g0iZrPlT.png](https://cldup.com/Q0g0iZrPlT.png)
 Helper library to record URL requests and save them locally (great for fixtures in HTTP stubbing)

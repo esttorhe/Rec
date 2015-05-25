@@ -236,7 +236,7 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
                 response, data, error -> Void in
                 // Try to access the protocol's client
-                if let client = self.client {
+                if let client = self.client, response = response {
                     // Cascade the «messages» to avoid the calling up from being stuck without response
                     client.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .NotAllowed)
                     client.URLProtocolDidFinishLoading(self)
