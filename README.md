@@ -1,4 +1,5 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Circle CI](https://circleci.com/gh/esttorhe/Rec.svg?style=svg)](https://circleci.com/gh/esttorhe/Rec)
 [![CI Status](http://img.shields.io/travis/esttorhe/Rec.svg?style=flat)](https://travis-ci.org/esttorhe/Rec)
 [![Version](https://img.shields.io/cocoapods/v/Rec.svg?style=flat)](http://cocoapods.org/pods/Rec)
 [![License](https://img.shields.io/cocoapods/l/Rec.svg?style=flat)](http://cocoapods.org/pods/Rec)
