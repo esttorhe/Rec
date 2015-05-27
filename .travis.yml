@@ -6,10 +6,11 @@ language: swift
  cache: cocoapods
  podfile: RecExample/Podfile
 before_install:
- - gem install cocoapods # Since Travis is not always on latest version
- - pod install --project-directory=Example
+ - bundle install --without=documentation --path ../travis_bundle_dir
 install:
-- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+ - pod install --project-directory=RecExample
+ - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
 - set -o pipefail && xcodebuild test -workspace Rec.xcworkspace -scheme RecExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
 - pod lib lint --quick
+after_success: slather

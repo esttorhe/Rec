@@ -1,0 +1,8 @@
+lather.yml
+
+coverage_service: coveralls
+xcodeproj: Rec.xcodeproj
+ignore:
+  - RecExample/*
+  - RecTests/*
+  - Carthage/*

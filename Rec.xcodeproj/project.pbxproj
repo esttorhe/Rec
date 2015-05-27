@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112A4E761B167FCB002B3A46 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112A4E751B167FCB002B3A46 /* Quick.framework */; };
+		112A4E791B168043002B3A46 /* Rect-iOS-Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112A4E781B168043002B3A46 /* Rect-iOS-Tests.swift */; };
+		112A4E7B1B1682CF002B3A46 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112A4E7A1B1682CF002B3A46 /* Nimble.framework */; };
 		114C484C1B01A3B200463FCD /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114C484A1B01A3B200463FCD /* Box.framework */; };
 		114C484D1B01A3B200463FCD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114C484B1B01A3B200463FCD /* Result.framework */; };
 		119B828F1AFC18C0000A8BBF /* Rec.h in Headers */ = {isa = PBXBuildFile; fileRef = 119B828E1AFC18C0000A8BBF /* Rec.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		112A4E751B167FCB002B3A46 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Checkouts/Quick/build/Debug-iphoneos/Quick.framework"; sourceTree = "<group>"; };
+		112A4E771B168042002B3A46 /* RecTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		112A4E781B168043002B3A46 /* Rect-iOS-Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rect-iOS-Tests.swift"; sourceTree = "<group>"; };
+		112A4E7A1B1682CF002B3A46 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Carthage/Checkouts/Quick/Externals/Nimble/build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
 		114C484A1B01A3B200463FCD /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = "Carthage/Checkouts/Result/Carthage/Checkouts/Box/build/Debug-iphoneos/Box.framework"; sourceTree = "<group>"; };
 		114C484B1B01A3B200463FCD /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
 		119B82891AFC18C0000A8BBF /* Rec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112A4E7B1B1682CF002B3A46 /* Nimble.framework in Frameworks */,
+				112A4E761B167FCB002B3A46 /* Quick.framework in Frameworks */,
 				119B82951AFC18C0000A8BBF /* Rec.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				119B82991AFC18C0000A8BBF /* Supporting Files */,
+				112A4E781B168043002B3A46 /* Rect-iOS-Tests.swift */,
+				112A4E771B168042002B3A46 /* RecTests-Bridging-Header.h */,
 			);
 			path = RecTests;
 			sourceTree = "<group>";
@@ -151,6 +162,8 @@
 		40757067DF242929D0DAAD41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				112A4E7A1B1682CF002B3A46 /* Nimble.framework */,
+				112A4E751B167FCB002B3A46 /* Quick.framework */,
 				11A8163F1B0561070072B8D7 /* Box.framework */,
 				11A816401B0561070072B8D7 /* Result.framework */,
 				114C484A1B01A3B200463FCD /* Box.framework */,
@@ -374,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112A4E791B168043002B3A46 /* Rect-iOS-Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +447,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -481,6 +497,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -544,30 +562,41 @@
 		119B82A31AFC18C0000A8BBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/Externals/Nimble/build/Debug-iphoneos",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = RecTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RecTests/RecTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		119B82A41AFC18C0000A8BBF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/Externals/Nimble/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = RecTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RecTests/RecTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
