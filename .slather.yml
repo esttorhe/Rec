@@ -1,4 +1,4 @@
-lather.yml
+# .slather.yml
 
 coverage_service: coveralls
 xcodeproj: Rec.xcodeproj
