@@ -2,6 +2,7 @@
 
 coverage_service: coveralls
 xcodeproj: Rec.xcodeproj
+source_directory: Rec
 ignore:
   - RecExample/*
   - RecTests/*
