@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111A94B81B16BE78008770DC /* Rec.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 119B82891AFC18C0000A8BBF /* Rec.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		112A4E761B167FCB002B3A46 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112A4E751B167FCB002B3A46 /* Quick.framework */; };
 		112A4E791B168043002B3A46 /* Rect-Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112A4E781B168043002B3A46 /* Rect-Tests.swift */; };
 		112A4E7B1B1682CF002B3A46 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112A4E7A1B1682CF002B3A46 /* Nimble.framework */; };
@@ -43,6 +44,19 @@
 			remoteInfo = "Rec-OSX";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		111A94B71B16BE57008770DC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				111A94B81B16BE78008770DC /* Rec.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		112A4E751B167FCB002B3A46 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Checkouts/Quick/build/Debug-iphoneos/Quick.framework"; sourceTree = "<group>"; };
@@ -229,6 +243,7 @@
 				119B82901AFC18C0000A8BBF /* Sources */,
 				119B82911AFC18C0000A8BBF /* Frameworks */,
 				119B82921AFC18C0000A8BBF /* Resources */,
+				111A94B71B16BE57008770DC /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -573,11 +588,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug-iphoneos",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/Externals/Nimble/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/**",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -596,11 +611,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug-iphoneos",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/Externals/Nimble/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/**",
 				);
 				INFOPLIST_FILE = RecTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -667,6 +682,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -689,6 +705,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
