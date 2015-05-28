@@ -4,14 +4,10 @@
 
 language: swift
 cache: cocoapods
-podfile: RecExample/Podfile
 
 before_install:
  - rvm use 2.1.3
  - bundle install --without=documentation --path=vendor
-install:
- - bundle exec pod install --project-directory=RecExample/
 script:
- - set -o pipefail && xcodebuild test -workspace Rec.xcworkspace -scheme RecExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
- - pod lib lint --quick
+ - set -o pipefail && bundle exec xcodebuild test -workspace Rec.xcworkspace -scheme Rec -sdk iphonesimulator8.3 ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -c
 after_success: bundle exec slather
