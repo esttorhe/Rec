@@ -3,6 +3,7 @@
 # * https://github.com/supermarin/xcpretty#usage
 
 language: objective-c
+osx_image: beta-xcode6.3
 bundler_args: --without development --deployment --jobs=3 --retry=3
 cache:
   - bundler
