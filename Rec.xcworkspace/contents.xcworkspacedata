@@ -5,12 +5,9 @@
       location = "container:Rec.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Carthage/Checkouts/Result/Result.xcodeproj">
+      location = "group:Carthage/Checkouts/Nimble/Nimble.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Carthage/Checkouts/Result/Carthage/Checkouts/Box/Box.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:Carthage/Checkouts/Quick/Quick.xcodeproj">
    </FileRef>
 </Workspace>
