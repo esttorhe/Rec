@@ -16,9 +16,9 @@ class RecSpec: QuickSpec {
                 context("when a new `NSURLSession` is created with `defaultsessionConfiguration`") {
                     it("should contain `Rec` as a registered protocol") {
                         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-                        if let protocolClasses = session.configuration.protocolClasses {
+                        if let protocolClasses: [AnyObject] = session.configuration.protocolClasses {
                             expect(protocolClasses.filter { (element) in
-                                return element === Rec.RecordingProtocol
+                                return element === Rec.RecordingProtocol.self
                                 }.count).to(equal(1))
                         }
                     }
@@ -27,9 +27,9 @@ class RecSpec: QuickSpec {
                 context("when a new `NSURLSession` is created with `ephemeralSessionConfiguration`") {
                     it("should contain `Rec` as a registered protocol") {
                         let session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration())
-                        if let protocolClasses = session.configuration.protocolClasses {
+                        if let protocolClasses: [AnyObject] = session.configuration.protocolClasses {
                             expect(protocolClasses.filter { (element) in
-                                return element === Rec.RecordingProtocol
+                                return element === Rec.RecordingProtocol.self
                                 }.count).to(equal(1))
                         }
                     }
