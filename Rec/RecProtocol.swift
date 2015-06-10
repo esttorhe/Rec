@@ -178,7 +178,7 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
     override public var cachedResponse: NSCachedURLResponse? { get { return nil } } // Don't support caching to force loading every request.
     
     public override class func canInitWithRequest(request: NSURLRequest) -> Bool {
-        guard let _ = request.valueForHTTPHeaderField(RecordingProtocol.ignoreRequestHTTPHeaderKey) else {
+        if let _ = request.valueForHTTPHeaderField(RecordingProtocol.ignoreRequestHTTPHeaderKey) {
             return false // We are already «eavesdropping» this request
         }
         
