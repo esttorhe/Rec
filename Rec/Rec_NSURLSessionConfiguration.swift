@@ -44,12 +44,18 @@ extension NSURLSessionConfiguration {
     
     Also registers `RecordingProtocol` class.
     
-    :returns: Fully configure `NSURLSessionConfiguration` with `RecordingProtocol` added to the `protocolClasses`.
+    - returns: Fully configure `NSURLSessionConfiguration` with `RecordingProtocol` added to the `protocolClasses`.
     */
     class func rec_defaultSessionConfiguration() -> NSURLSessionConfiguration {
         RecordingProtocol.registerClass(RecordingProtocol)
         let configuration = self.rec_defaultSessionConfiguration()
-        configuration.protocolClasses?.insert(RecordingProtocol.self as AnyObject, atIndex: 0)
+
+        // Since `Swift 2.0` had to cast to [AnyObject] in order to correctly add
+        // the protocol without crashing.
+        // Radar: rdar://21314581
+        if var protocols: [AnyObject] = configuration.protocolClasses {
+            protocols.append(RecordingProtocol.self as AnyObject)
+        }
         
         return configuration
     }
@@ -60,12 +66,18 @@ extension NSURLSessionConfiguration {
     
     Also registers `RecordingProtocol` class.
     
-    :returns: Fully configure `NSURLSessionConfiguration` with `RecordingProtocol` added to the `protocolClasses`.
+    - returns: Fully configure `NSURLSessionConfiguration` with `RecordingProtocol` added to the `protocolClasses`.
     */
     class func rec_ephemeralSessionConfiguration() -> NSURLSessionConfiguration {
         RecordingProtocol.registerClass(RecordingProtocol)
         let configuration = self.rec_ephemeralSessionConfiguration()
-        configuration.protocolClasses?.insert(RecordingProtocol.self as AnyObject, atIndex: 0)
+
+        // Since `Swift 2.0` had to cast to [AnyObject] in order to correctly add
+        // the protocol without crashing.
+        // Radar: rdar://21314581
+        if var protocols: [AnyObject] = configuration.protocolClasses {
+            protocols.append(RecordingProtocol.self as AnyObject)
+        }
         
         return configuration
     }

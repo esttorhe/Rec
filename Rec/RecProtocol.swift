@@ -3,23 +3,33 @@
 // Native Frameworks
 import Foundation
 
-// Third Party Frameworks
-import Result
-import Box
+public enum Either<Value> {
+    case Success(Value)
+    case Error(ErrorType)
+}
+
+/// `RecordingProtocol` errors.
+public enum RecordingError: ErrorType {
+    /// Unable to start loading the request
+    case UnableToStartLoadingRequest
+    /// Failed to connect with NSURLRequest
+    case FailedToConnectToWithRequest(NSURLRequest)
+    /// Unable to correctly parse as a `JSON` response
+    case UnableToCorrectlyParseAsJSON(NSURLRequest)
+    /// Unable to get the `Document`'s directory path
+    case UnableToGetDocumentsDirectoryPath
+    /// Unable to extract the request's last path component for file name generation.
+    case UnableToExtractRequestsLastPath(NSURLRequest)
+    /// Unable to save file to path
+    case UnableToSaveFileToPath(String)
+    /// Unable to get a successful response from URL.
+    case UnableToGetSuccessfullResponseFromRequest(NSURLRequest)
+}
 
 /**
 `NSURLProtocol` subclass that records `NSURLResponse`'s `JSON`.
-
-List of error codes:
-    - `-666`: Unable to start loading the request
-    - `-667`: Failed to connect to URL
-    - `-668`: Unable to correctly parse as a `JSON` response
-    - `-669`: Unable to get the `Document`'s directory path
-    - `-670`: Unable to extract the request's last path component for file name generation.
-    - `-671`: Unable to save file to path
-    - `-672`: Unable to get a successful response from URL.
 */
-public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLConnectionDataDelegate, Hashable {
+public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLConnectionDataDelegate {
     // MARK: RecordingProtocolsManager
     
     /**
@@ -44,7 +54,7 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
         /**
             «Callback» function to report back the result of each request.
         */
-        var operationResult: ((Result<String, NSError>) -> ())?
+        var operationResult: (Either<String> -> ())?
         
         init() {}
         
@@ -56,7 +66,7 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
             objc_sync_enter(lock)
             requests[recordingProtocol.hashValue] = recordingProtocol
             
-            recordingProtocol.operationResult = { result in
+            recordingProtocol.operationResult = { result -> () in
                 if let opResult = self.operationResult {
                     opResult(result)
                     objc_sync_enter(self.lock)
@@ -85,7 +95,7 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
     /**
         «Callback» function reporting back wether or not the recording operation was a success.
     */
-    public var operationResult: ((Result<String, NSError>) -> ())?
+    public var operationResult: (Either<String> -> ())?
     
     override init(request: NSURLRequest, cachedResponse: NSCachedURLResponse?, client: NSURLProtocolClient?) {
         let mRequest: NSMutableURLRequest = request.mutableCopy() as! NSMutableURLRequest
@@ -110,7 +120,7 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
                 }
         }
     */
-    public class func globalOperationResult(operation: (Result<String, NSError>) -> ()) {
+    public class func globalOperationResult(operation: Either<String> -> ()) {
         RecordingProtocolsManager.sharedManager.operationResult = operation
     }
     
@@ -122,86 +132,45 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
         }
     }
     
-    private func processResponse(response: NSURLResponse!, connection: NSURLConnection, data: NSData!, error: NSError!) {
-        let result =
+    private func processResponse(response: NSURLResponse!, connection: NSURLConnection, data: NSData!, error: NSError!) throws {
         // Check if there was an error reported back
-        testError(error, forRequest: connection.originalRequest) >>- { _ in
-            Result(connection.currentRequest.URL, failWith: NSError(domain: RecordingProtocol.errorDomain, code: -670,
-                userInfo: [NSLocalizedDescriptionKey: "Unable to extract the request's last path component for file name generation."]))
-            .analysis(ifSuccess: { url -> Result<NSURL, NSError> in // Extract the request's url
-                let docsResult = try { // Get the `Documents` folder path
-                    return NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: false, error: $0)
-                }
-                
-                return docsResult >>- { docsURL -> Result<NSURL, NSError> in
-                    if let lastPathComponent = url.lastPathComponent { // Extract the name of the `URL` request
-                        return Result.success(docsURL.URLByAppendingPathComponent(lastPathComponent).URLByAppendingPathExtension("json"))
-                    }
-                    
-                    return Result.failure(NSError(
-                        domain: RecordingProtocol.errorDomain,
-                        code: -670,
-                        userInfo: [NSLocalizedDescriptionKey: "Unable to extract the request's last path component for file name generation."]))
-                }
-            }, ifFailure: {
-                return Result.failure(NSError(
-                    domain: RecordingProtocol.errorDomain,
-                    code: -669,
-                    userInfo: [ NSLocalizedDescriptionKey: "Unable to get the «Document»'s directory path", NSUnderlyingErrorKey: $0]))
-            }) >>- { fileUrl -> Result<String, NSError> in
-                let finalResult = Result(NSString(data: data, encoding: NSUTF8StringEncoding), failWith: NSError(
-                    domain: RecordingProtocol.errorDomain,
-                    code: -668,
-                    userInfo: [NSLocalizedDescriptionKey: "Unable to correctly parse a `JSON` response for \(connection.originalRequest)"]))
-                    >>- { json in // Write the parse `JSON` to disk
-                        return try { json.writeToURL(fileUrl, atomically: true, encoding: NSUTF8StringEncoding, error: $0) }
-                            >>- { Result.success("Filed saved to \(fileUrl.absoluteString)") }
-                    }
-                
-                // «Cascade up» the success or add our own failure.
-                return finalResult ?? Result.failure(NSError(
-                        domain: RecordingProtocol.errorDomain,
-                        code: -671,
-                        userInfo: [
-                            NSLocalizedDescriptionKey: "Unable to save file \(fileUrl.lastPathComponent) to here \(fileUrl.absoluteString)",
-                            NSUnderlyingErrorKey: finalResult.error!
-                        ]))
-            }
-        }
-
-        if let callback = operationResult {
-            callback(result)
-        }
-    }
-    
-    /**
-        Checks if the provided `error` is not `nil` and its code is different than `0` and 
-        returns a `failure` with that error as the underlying one.
-    
-        Or returns a `success` otherwise.
-    
-        :param: error The `NSError!` object to be evaluated.
-        :param: request The `NSURLRequest` used to construct the internal `NSError`
-    
-        :returns: A fully initialized `Result<String, NSError>` with either `success` or `failure` depending on the `error` provided.
-    */
-    private func testError(error: NSError!, forRequest request: NSURLRequest) -> Result<String, NSError> {
-        if error != nil && error.code != 0 {
-            return Result.failure(
-                NSError(
-                    domain: RecordingProtocol.errorDomain,
-                    code: -672,
-                    userInfo: [
-                        NSLocalizedDescriptionKey: "Unable to get a successful response for \(request).",
-                        NSUnderlyingErrorKey: error
-                    ]
-                )
-            )
+        if error.code != 0 {
+            throw RecordingError.UnableToGetSuccessfullResponseFromRequest(connection.originalRequest)
         }
         
-        return Result.success("No error")
+        // Extract the url from the current request (if possible).
+        guard let url = connection.currentRequest.URL else {
+            throw RecordingError.UnableToExtractRequestsLastPath(connection.currentRequest)
+        }
+        
+        // Get the `Documents` folder path
+        let docsURL: NSURL
+        do {
+            docsURL = try NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: false)
+        } catch {
+            throw RecordingError.UnableToGetDocumentsDirectoryPath
+        }
+        
+        // Extract the name of the `URL` request
+        guard let lastPathComponent = url.lastPathComponent else {
+            throw RecordingError.UnableToExtractRequestsLastPath(connection.currentRequest)
+        }
+        
+        // Build the full file url.
+        let fileURL = docsURL.URLByAppendingPathComponent(lastPathComponent).URLByAppendingPathExtension("json")
+        
+        // Convert the returned data to `JSON`.
+        guard let json = NSString(data: data, encoding: NSUTF8StringEncoding) else {
+            throw RecordingError.UnableToCorrectlyParseAsJSON(connection.originalRequest)
+        }
+        
+        // Write the `JSON` to disk.
+        do {
+            try json.writeToURL(fileURL, atomically: true, encoding: NSUTF8StringEncoding)
+        } catch {
+            throw RecordingError.UnableToSaveFileToPath(fileURL.absoluteString)
+        }
     }
-    
     
     
     // MARK: NSURLProtocol
@@ -209,17 +178,15 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
     override public var cachedResponse: NSCachedURLResponse? { get { return nil } } // Don't support caching to force loading every request.
     
     public override class func canInitWithRequest(request: NSURLRequest) -> Bool {
-        if let stop = request.valueForHTTPHeaderField(RecordingProtocol.ignoreRequestHTTPHeaderKey) {
+        guard let _ = request.valueForHTTPHeaderField(RecordingProtocol.ignoreRequestHTTPHeaderKey) else {
             return false // We are already «eavesdropping» this request
         }
         
         if let url = request.URL {
-            if let scheme = url.scheme {
-                if let acceptContent = request.valueForHTTPHeaderField("Accept") {
-                    // Only supporting http|https schemes
-                    // and `JSON` responses
-                    return scheme.hasPrefix("http") && acceptContent == "application/json"
-                }
+            if let acceptContent = request.valueForHTTPHeaderField("Accept") {
+                // Only supporting http|https schemes
+                // and `JSON` responses
+                return url.scheme.hasPrefix("http") && acceptContent == "application/json"
             }
         }
         
@@ -233,8 +200,8 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
     override public func startLoading() {
         if let connection = NSURLConnection(request: request, delegate: self) {
             RecordingProtocolsManager.sharedManager.addProtocol(self)
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
-                response, data, error -> Void in
+
+            NSURLConnection.sendAsynchronousRequest(request, queue: .mainQueue(), completionHandler: { (response, data, error) -> Void in
                 // Try to access the protocol's client
                 if let client = self.client, response = response {
                     // Cascade the «messages» to avoid the calling up from being stuck without response
@@ -242,13 +209,15 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
                     client.URLProtocolDidFinishLoading(self)
                 }
                 
-                self.processResponse(response, connection: connection, data: data, error: error)
-            }
+                do { try self.processResponse(response, connection: connection, data: data, error: error) }
+                catch is RecordingError {
+                    print("`RecordingProtocol` returned a recognized `RecordingError`.")
+                } catch {
+                    print("Unexpected error while processing the request.")
+                }
+            })
         } else {
-            if let callback = operationResult {
-                let error = NSError(domain: RecordingProtocol.errorDomain, code: -666, userInfo: [NSLocalizedDescriptionKey: "Unable to start loading request: \(request.URL)"])
-                callback(Result.failure(error))
-            }
+            operationResult?(Either.Error(RecordingError.UnableToStartLoadingRequest))
         }
     }
     
@@ -257,19 +226,9 @@ public class RecordingProtocol: NSURLProtocol, NSURLConnectionDelegate, NSURLCon
     // MARK: NSURLConnectionDelegate
     
     public func connection(connection: NSURLConnection, didFailWithError error: NSError) {
-        if let callback = operationResult {
-            let internalError = NSError(
-                domain: RecordingProtocol.errorDomain,
-                code: -667,
-                userInfo: [
-                    NSLocalizedDescriptionKey: "Failed to connect to \(connection.originalRequest)",
-                    NSUnderlyingErrorKey: error
-                ])
-            callback(Result.failure(internalError))
-            
-            if let client = self.client {
-                client.URLProtocol(self, didFailWithError: error)
-            }
+        operationResult?(Either.Error(RecordingError.FailedToConnectToWithRequest(connection.originalRequest)))
+        if let client = self.client {
+            client.URLProtocol(self, didFailWithError: error)
         }
     }
 }
