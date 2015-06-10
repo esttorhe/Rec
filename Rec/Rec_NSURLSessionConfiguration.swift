@@ -55,6 +55,7 @@ extension NSURLSessionConfiguration {
         // Radar: rdar://21314581
         if var protocols: [AnyObject] = configuration.protocolClasses {
             protocols.append(RecordingProtocol.self as AnyObject)
+            configuration.protocolClasses = (protocols as! [AnyClass])
         }
         
         return configuration
@@ -77,6 +78,7 @@ extension NSURLSessionConfiguration {
         // Radar: rdar://21314581
         if var protocols: [AnyObject] = configuration.protocolClasses {
             protocols.append(RecordingProtocol.self as AnyObject)
+            configuration.protocolClasses = (protocols as! [AnyClass])
         }
         
         return configuration
