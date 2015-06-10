@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		111A94B81B16BE78008770DC /* Rec.framework in Embed Development Framework */ = {isa = PBXBuildFile; fileRef = 119B82891AFC18C0000A8BBF /* Rec.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		111A94B81B16BE78008770DC /* Rec.framework in Embed Development Framework */ = {isa = PBXBuildFile; fileRef = 119B82891AFC18C0000A8BBF /* Rec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		111A94BC1B16E5D8008770DC /* Rec.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 11A816231B05609B0072B8D7 /* Rec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		112A4E791B168043002B3A46 /* Rect-Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112A4E781B168043002B3A46 /* Rect-Tests.swift */; };
-		114C484C1B01A3B200463FCD /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114C484A1B01A3B200463FCD /* Box.framework */; };
-		114C484D1B01A3B200463FCD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114C484B1B01A3B200463FCD /* Result.framework */; };
 		116DF07A1B16955D005C9A1E /* Rect-Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112A4E781B168043002B3A46 /* Rect-Tests.swift */; };
 		119B828F1AFC18C0000A8BBF /* Rec.h in Headers */ = {isa = PBXBuildFile; fileRef = 119B828E1AFC18C0000A8BBF /* Rec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		119B82951AFC18C0000A8BBF /* Rec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B82891AFC18C0000A8BBF /* Rec.framework */; };
@@ -20,11 +18,11 @@
 		11A8162E1B05609C0072B8D7 /* Rec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A816231B05609B0072B8D7 /* Rec.framework */; };
 		11A8163C1B0560A90072B8D7 /* RecProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B82A51AFC1915000A8BBF /* RecProtocol.swift */; };
 		11A8163D1B0560A90072B8D7 /* Rec_NSURLSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B82E21AFC6C2B000A8BBF /* Rec_NSURLSessionConfiguration.swift */; };
-		11A816411B0561070072B8D7 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A8163F1B0561070072B8D7 /* Box.framework */; };
-		11A816421B0561070072B8D7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A816401B0561070072B8D7 /* Result.framework */; };
 		11A816431B0561B70072B8D7 /* Rec.h in Headers */ = {isa = PBXBuildFile; fileRef = 119B828E1AFC18C0000A8BBF /* Rec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		37B4F33F6A40F7F3CCB10DFF /* Pods_RecTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03882E5517CEA7F208ECB830 /* Pods_RecTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		D42BA25397AA2E17BE656AB0 /* Pods_Rec_OSXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD18C4E97B4641869E759071 /* Pods_Rec_OSXTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		11BFE8791B27BA00008C65D9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BFE8771B27BA00008C65D9 /* Nimble.framework */; };
+		11BFE87A1B27BA00008C65D9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BFE8781B27BA00008C65D9 /* Quick.framework */; };
+		11BFE87D1B27BA07008C65D9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BFE87B1B27BA07008C65D9 /* Nimble.framework */; };
+		11BFE87E1B27BA07008C65D9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BFE87C1B27BA07008C65D9 /* Quick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,15 +67,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03882E5517CEA7F208ECB830 /* Pods_RecTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		111A94BD1B178D6B008770DC /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Carthage/Checkouts/ocmock/Source/build/Debug/OCMock.framework; sourceTree = "<group>"; };
 		111A94BF1B178D76008770DC /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = "Carthage/Checkouts/ocmock/Source/build/Debug-iphoneos/libOCMock.a"; sourceTree = "<group>"; };
 		112A4E751B167FCB002B3A46 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Checkouts/Quick/build/Debug-iphoneos/Quick.framework"; sourceTree = "<group>"; };
 		112A4E771B168042002B3A46 /* RecTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		112A4E781B168043002B3A46 /* Rect-Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rect-Tests.swift"; sourceTree = "<group>"; };
 		112A4E7A1B1682CF002B3A46 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Carthage/Checkouts/Quick/Externals/Nimble/build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
-		114C484A1B01A3B200463FCD /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = "Carthage/Checkouts/Result/Carthage/Checkouts/Box/build/Debug-iphoneos/Box.framework"; sourceTree = "<group>"; };
-		114C484B1B01A3B200463FCD /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
 		116DF07B1B1695AC005C9A1E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Checkouts/Quick/build/Debug/Quick.framework; sourceTree = "<group>"; };
 		116DF07D1B1695C6005C9A1E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Checkouts/Quick/Externals/Nimble/build/Debug/Nimble.framework; sourceTree = "<group>"; };
 		119B82891AFC18C0000A8BBF /* Rec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,13 +84,10 @@
 		119B82E21AFC6C2B000A8BBF /* Rec_NSURLSessionConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rec_NSURLSessionConfiguration.swift; sourceTree = "<group>"; };
 		11A816231B05609B0072B8D7 /* Rec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A8162D1B05609B0072B8D7 /* Rec-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rec-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		11A8163F1B0561070072B8D7 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Checkouts/Result/Carthage/Checkouts/Box/build/Debug/Box.framework; sourceTree = "<group>"; };
-		11A816401B0561070072B8D7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Checkouts/Result/build/Debug/Result.framework; sourceTree = "<group>"; };
-		7420C5857C3380D857D13902 /* Pods-RecTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecTests/Pods-RecTests.release.xcconfig"; sourceTree = "<group>"; };
-		805DEF83B7AB2AA1E65492AD /* Pods-RecTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecTests/Pods-RecTests.debug.xcconfig"; sourceTree = "<group>"; };
-		ACD823B71C2308383B956EEB /* Pods-Rec-OSXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rec-OSXTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rec-OSXTests/Pods-Rec-OSXTests.release.xcconfig"; sourceTree = "<group>"; };
-		DBAE95179C3F1B77269AC2EE /* Pods-Rec-OSXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rec-OSXTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rec-OSXTests/Pods-Rec-OSXTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DD18C4E97B4641869E759071 /* Pods_Rec_OSXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rec_OSXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11BFE8771B27BA00008C65D9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Carthage/Checkouts/Nimble/build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
+		11BFE8781B27BA00008C65D9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Checkouts/Quick/build/Debug-iphoneos/Quick.framework"; sourceTree = "<group>"; };
+		11BFE87B1B27BA07008C65D9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Checkouts/Nimble/build/Debug/Nimble.framework; sourceTree = "<group>"; };
+		11BFE87C1B27BA07008C65D9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Checkouts/Quick/build/Debug/Quick.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				114C484C1B01A3B200463FCD /* Box.framework in Frameworks */,
-				114C484D1B01A3B200463FCD /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,8 +102,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BFE8791B27BA00008C65D9 /* Nimble.framework in Frameworks */,
+				11BFE87A1B27BA00008C65D9 /* Quick.framework in Frameworks */,
 				119B82951AFC18C0000A8BBF /* Rec.framework in Frameworks */,
-				37B4F33F6A40F7F3CCB10DFF /* Pods_RecTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +112,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11A816411B0561070072B8D7 /* Box.framework in Frameworks */,
-				11A816421B0561070072B8D7 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,14 +119,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BFE87D1B27BA07008C65D9 /* Nimble.framework in Frameworks */,
+				11BFE87E1B27BA07008C65D9 /* Quick.framework in Frameworks */,
 				11A8162E1B05609C0072B8D7 /* Rec.framework in Frameworks */,
-				D42BA25397AA2E17BE656AB0 /* Pods_Rec_OSXTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		110111191B275A7600EA648B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		119B827F1AFC18C0000A8BBF = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +142,6 @@
 				119B82981AFC18C0000A8BBF /* RecTests */,
 				119B828A1AFC18C0000A8BBF /* Products */,
 				40757067DF242929D0DAAD41 /* Frameworks */,
-				61BBB512A0D740AA58918BC8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,6 +178,7 @@
 		119B82981AFC18C0000A8BBF /* RecTests */ = {
 			isa = PBXGroup;
 			children = (
+				110111191B275A7600EA648B /* Frameworks */,
 				119B82991AFC18C0000A8BBF /* Supporting Files */,
 				112A4E781B168043002B3A46 /* Rect-Tests.swift */,
 				112A4E771B168042002B3A46 /* RecTests-Bridging-Header.h */,
@@ -200,31 +197,18 @@
 		40757067DF242929D0DAAD41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11BFE87B1B27BA07008C65D9 /* Nimble.framework */,
+				11BFE87C1B27BA07008C65D9 /* Quick.framework */,
+				11BFE8771B27BA00008C65D9 /* Nimble.framework */,
+				11BFE8781B27BA00008C65D9 /* Quick.framework */,
 				111A94BF1B178D76008770DC /* libOCMock.a */,
 				111A94BD1B178D6B008770DC /* OCMock.framework */,
 				116DF07D1B1695C6005C9A1E /* Nimble.framework */,
 				116DF07B1B1695AC005C9A1E /* Quick.framework */,
 				112A4E7A1B1682CF002B3A46 /* Nimble.framework */,
 				112A4E751B167FCB002B3A46 /* Quick.framework */,
-				11A8163F1B0561070072B8D7 /* Box.framework */,
-				11A816401B0561070072B8D7 /* Result.framework */,
-				114C484A1B01A3B200463FCD /* Box.framework */,
-				114C484B1B01A3B200463FCD /* Result.framework */,
-				DD18C4E97B4641869E759071 /* Pods_Rec_OSXTests.framework */,
-				03882E5517CEA7F208ECB830 /* Pods_RecTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		61BBB512A0D740AA58918BC8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DBAE95179C3F1B77269AC2EE /* Pods-Rec-OSXTests.debug.xcconfig */,
-				ACD823B71C2308383B956EEB /* Pods-Rec-OSXTests.release.xcconfig */,
-				805DEF83B7AB2AA1E65492AD /* Pods-RecTests.debug.xcconfig */,
-				7420C5857C3380D857D13902 /* Pods-RecTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +241,6 @@
 				119B82841AFC18C0000A8BBF /* Sources */,
 				119B82861AFC18C0000A8BBF /* Headers */,
 				119B82871AFC18C0000A8BBF /* Resources */,
-				119B82DD1AFC635D000A8BBF /* Copy Carthage Dependency Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,13 +255,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 119B82A21AFC18C0000A8BBF /* Build configuration list for PBXNativeTarget "RecTests" */;
 			buildPhases = (
-				7BC12232007A7557E17A058A /* Check Pods Manifest.lock */,
 				119B82901AFC18C0000A8BBF /* Sources */,
 				119B82911AFC18C0000A8BBF /* Frameworks */,
 				119B82921AFC18C0000A8BBF /* Resources */,
 				111A94B71B16BE57008770DC /* Embed Development Framework */,
-				DF956B8D5DB9F5FA185B064C /* Embed Pods Frameworks */,
-				A57FB7AF4E10E491C87AA6FB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,7 +278,6 @@
 				11A8161E1B05609B0072B8D7 /* Sources */,
 				11A816201B05609B0072B8D7 /* Headers */,
 				11A816211B05609B0072B8D7 /* Resources */,
-				11A8163E1B0560E10072B8D7 /* Copy Carthage Dependency Frameworks */,
 			);
 			buildRules = (
 			);
@@ -313,13 +292,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11A8163B1B05609C0072B8D7 /* Build configuration list for PBXNativeTarget "Rec-OSXTests" */;
 			buildPhases = (
-				F87DA2B276BFA3512A649707 /* Check Pods Manifest.lock */,
 				11A816291B05609B0072B8D7 /* Sources */,
 				11A8162A1B05609B0072B8D7 /* Frameworks */,
 				11A8162B1B05609B0072B8D7 /* Resources */,
 				111A94BB1B16E5CD008770DC /* CopyFiles */,
-				A6457C04D00731E338367272 /* Embed Pods Frameworks */,
-				D8166F1AFF2F8AF60FED1759 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,7 +313,8 @@
 		119B82801AFC18C0000A8BBF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Esteban Torres";
 				TargetAttributes = {
 					119B82881AFC18C0000A8BBF = {
@@ -404,127 +381,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		119B82DD1AFC635D000A8BBF /* Copy Carthage Dependency Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Carthage Dependency Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks ${SRCROOT}/Carthage/Build/iOS/Box.framework\n/usr/local/bin/carthage copy-frameworks ${SRCROOT}/Carthage/Build/iOS/Result.framework";
-		};
-		11A8163E1B0560E10072B8D7 /* Copy Carthage Dependency Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Carthage Dependency Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks ${SRCROOT}/Carthage/Build/Mac/Box.framework\n/usr/local/bin/carthage copy-frameworks ${SRCROOT}/Carthage/Build/Mac/Result.framework";
-		};
-		7BC12232007A7557E17A058A /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A57FB7AF4E10E491C87AA6FB /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecTests/Pods-RecTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6457C04D00731E338367272 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rec-OSXTests/Pods-Rec-OSXTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D8166F1AFF2F8AF60FED1759 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rec-OSXTests/Pods-Rec-OSXTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DF956B8D5DB9F5FA185B064C /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecTests/Pods-RecTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F87DA2B276BFA3512A649707 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		119B82841AFC18C0000A8BBF /* Sources */ = {
@@ -599,6 +455,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
@@ -686,6 +543,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "es.estebantorr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
@@ -707,6 +565,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.estebantorr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
@@ -715,7 +574,6 @@
 		};
 		119B82A31AFC18C0000A8BBF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 805DEF83B7AB2AA1E65492AD /* Pods-RecTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -731,10 +589,8 @@
 				INFOPLIST_FILE = RecTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/ocmock/Source/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.estebantorr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RecTests/RecTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -743,7 +599,6 @@
 		};
 		119B82A41AFC18C0000A8BBF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7420C5857C3380D857D13902 /* Pods-RecTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -755,10 +610,8 @@
 				INFOPLIST_FILE = RecTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/ocmock/Source/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.estebantorr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RecTests/RecTests-Bridging-Header.h";
 			};
@@ -787,6 +640,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "es.estebantorr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Rec;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -810,6 +664,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "es.estebantorr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Rec;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -818,7 +673,6 @@
 		};
 		11A816381B05609C0072B8D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBAE95179C3F1B77269AC2EE /* Pods-Rec-OSXTests.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -828,7 +682,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug",
 					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/Externals/Nimble/build/Debug",
-					"$(PROJECT_DIR)/Carthage/Checkouts/ocmock/Source/build/Debug",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -837,6 +690,7 @@
 				INFOPLIST_FILE = RecTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "es.estebantorr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -844,7 +698,6 @@
 		};
 		11A816391B05609C0072B8D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACD823B71C2308383B956EEB /* Pods-Rec-OSXTests.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -853,11 +706,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug",
 					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/Externals/Nimble/build/Debug",
-					"$(PROJECT_DIR)/Carthage/Checkouts/ocmock/Source/build/Debug",
 				);
 				INFOPLIST_FILE = RecTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "es.estebantorr.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};

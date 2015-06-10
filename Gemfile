@@ -10,6 +10,9 @@ gem 'xcpretty'
 # The Cocoa library package manager.
 gem 'cocoapods'
 
+# A CocoaPods plugin to remove and de-intergrate CocoaPods from your project.
+gem 'cocoapods-deintegrate'
+
 # Test coverage reports for Xcode projects
 gem 'slather'
 
