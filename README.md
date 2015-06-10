@@ -17,6 +17,7 @@ Helper library to record URL requests and save them locally (great for fixtures 
   <a href="#rec"><b>Rec</b></a> &bull; 
   <a href="#error-codes"><i>Error Codes</i></a> &bull; 
   <a href="#todo">TODO</a> &bull; 
+  <a href="#swift-2.0">Swift 2.0</a> &bull;
 </p>
 -------
 
@@ -52,6 +53,10 @@ Here's the list of «internal» error codes:
 - [ ] Support disabling automatic «injection» • [Issue #3] (https://github.com/esttorhe/Rec/issues/3)
 - [ ] Fix the race condition happening on the Example App (`println()` I'm :eyes: at you :unamused: ) • [Issue #4] (https://github.com/esttorhe/Rec/issues/4)
 - [x] ~~Add support for `OS X`~~ • [Issue #5] (https://github.com/esttorhe/Rec/issues/5)
+
+# `Swift 2.0`
+There's a branch called `swift-2.0` that currently supports `Rec` with 2.0 syntax.
+This means no longer µFrameworks `Result` & `Box` and the inclusion of `throws` and custom `ErrorType` for the error handling in the framework.
 
 [Orta]:https://github.com/orta
 [httpstubs]:https://github.com/AliSoftware/OHHTTPStubs
