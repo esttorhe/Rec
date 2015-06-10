@@ -38,13 +38,24 @@ This is where `Rec` comes to play; it's an `NSURLProtocol` that intercepts each 
 
 ## Error Codes
 Here's the list of «internal» error codes:
-  - `-666`: Unable to start loading the request
-  - `-667`: Failed to connect to URL
-  - `-668`: Unable to correctly parse as a `JSON` response
-  - `-669`: Unable to get the `Document`'s directory path
-  - `-670`: Unable to extract the request's last path component for file name generation.
-  - `-671`: Unable to save file to path
-  - `-672`: Unable to get a successful response from URL.
+```swift
+public enum RecordingError: ErrorType {
+    /// Unable to start loading the request
+    case UnableToStartLoadingRequest
+    /// Failed to connect with NSURLRequest
+    case FailedToConnectToWithRequest(NSURLRequest)
+    /// Unable to correctly parse as a `JSON` response
+    case UnableToCorrectlyParseAsJSON(NSURLRequest)
+    /// Unable to get the `Document`'s directory path
+    case UnableToGetDocumentsDirectoryPath
+    /// Unable to extract the request's last path component for file name generation.
+    case UnableToExtractRequestsLastPath(NSURLRequest)
+    /// Unable to save file to path
+    case UnableToSaveFileToPath(String)
+    /// Unable to get a successful response from URL.
+    case UnableToGetSuccessfullResponseFromRequest(NSURLRequest)
+}
+```
 
 # TODO:
 - [ ] Support other responses (e.g.: `xml`, etc) • [Issue #1] (https://github.com/esttorhe/Rec/issues/1)
