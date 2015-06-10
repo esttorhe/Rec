@@ -17,7 +17,7 @@ Helper library to record URL requests and save them locally (great for fixtures 
   <a href="#rec"><b>Rec</b></a> &bull; 
   <a href="#error-codes"><i>Error Codes</i></a> &bull; 
   <a href="#todo">TODO</a> &bull; 
-  <a href="#swift-2.0">Swift 2.0</a> &bull;
+  <a href="#swift-20">Swift 2.0</a> &bull;
 </p>
 -------
 
